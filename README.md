@@ -1,22 +1,22 @@
-# FOREL
-Implementation of FOREL (FORmal ELement) clustering algorithm in C (standard C89/C90)  
-## About FOREL  
-FOREL is iterative clustering algorithm designed by soviet/russian mathematician N.G. Zagoruiko from Novosibirsk in 1960-s for decision tasks in palentology.  
+# forel
+Implementation of forel (FORmal ELement) clustering algorithm in C (standard C89/C90)  
+## About forel  
+FOREL is an iterative clustering algorithm developed by the Soviet/Russian mathematician N.G. Zagoruiko from Novosibirsk in the 1960s to solve tasks in paleontology.  
 The main idea of the algorithm is to combine objects in the areas of their greatest concentration into one cluster.  
 #### Input data:
-  +  $X=\mathrm{x}_{i=1,j=1}^{n,m}$ — description of objects, where n — number of object, m — number of attributes;  
-  +  *R* ∈ ℝ — concentration radius.  
+  +  $X=\mathrm{x}_{i=1,j=1}^{n,m}$ — description of objects, where n — number of objects, m — number of attributes;  
+  +  $R > 0$ — concentration radius.  
 #### Output data:   
-  +  $Y=\left\\{y_i|y_i\in ℕ,i\in\overline{\left(1,n\right)}\right\\}$ — cluster labels.  
-#### Advantages of FOREL:
+  +  $Y=\left\\{y_i|y_i\in ℕ,i=\overline{\left(1,n\right)}\right\\}$ — cluster labels.  
+#### Advantages of forel:
   +  Easy to implement;  
   +  The ability to calculate intermediate estimates of the quality of clustering, for example, the length of the chain of local thickenings;  
   +  The presence of many modifications.  
-#### Disadvantages of FOREL:   
-  +  Strong dependence of the solution on the input parameter R; 
+#### Disadvantages of forel:   
+  +  Strong dependence of the solution on the input parameter $R$;  
   +  Instability of the algorithm (dependence on the choice of the object for "concentration");  
   +  Poor partitioning of clusters with a complex structure.  
-### Steps of FOREL algorithm  
+### Steps of forel algorithm  
 Step 0. Data preparing (autoscaling): $x_{i,j}=\frac{x_{i,j}-\mathrm{E_{X^{j}}}}{\sigma_{X^{j}}}$;  
 Step 1. Mark all objects as "unselected";  
 Step 2. Set a randomly selected object among the unselected ones from the dataset as a local center of condensation;  
